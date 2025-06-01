@@ -59,12 +59,11 @@ const getRandomPokemonImage = async() => {
     let randomId = Math.floor(Math.random() * count);
     let information = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
     let datos = await information.json();
-    console.log(datos)
     return (datos.sprites.front_default);
 }
 
 
-// EJERCICIO 7
+// EJERCICIO 6
 
 const getRandomCharacter = async() => {
     let character = await fetch('https://rickandmortyapi.com/api/character');
@@ -77,7 +76,7 @@ const getRandomCharacter = async() => {
 }
 
 
-// EJERCICIO 8
+// EJERCICIO 7
 
 const getRandomCharacterInfo = async () => {
     const character = await fetch('https://rickandmortyapi.com/api/character/1');
@@ -89,7 +88,6 @@ const getRandomCharacterInfo = async () => {
     const episodeData = await episodeResponse.json();
     const firstEpisode = episodeData.name;
     const dateEpisode = episodeData.air_date;
-
     return { img, name, episodes, firstEpisode, dateEpisode };
 };
 
